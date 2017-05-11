@@ -1,0 +1,41 @@
+<div class="page-header">
+    <h1>SuperAdmin Deban</h1>
+</div>
+
+<!-- Debanning -->
+<form ng-submit="superdeban.superdebanUser(superdebanData);">
+    
+    <!-- Username -->
+    <label>Username:</label>
+    <input class="form-control" type="text" name="username" placeholder="please enter username" ng-model="superdeban.superdebanData.username">
+    <br>
+    <!-- Submit/Deban Button -->
+    <button class="btn btn-primary" type="submit">Super Deban</button>
+</form>
+<br>
+
+<!-- Registration Form -->
+
+<br>
+
+<!-- Loading Icon -->
+<div class="jumbotron text-center" ng-show="register.loading">
+    <span class="glyphicon glyphicon-repeat spinner"></span>
+    <p>Loading....</p>
+</div>
+<!-- Loading Icon -->
+
+<br>
+
+<!-- Successful Ban Message -->
+<div class="row show-hide-message" ng-show="superdeban.successMsg">
+    <div class="alert alert-success">{{ superdeban.successMsg }}</div>
+</div>
+<!-- Failure Ban Message -->
+
+<br>
+
+<div class="row show-hide-message" ng-show="superdeban.errorMsg">
+    <div class="alert alert-danger">{{ superdeban.errorMsg }}</div>
+</div>
+<!-- Failed Registration Message -->

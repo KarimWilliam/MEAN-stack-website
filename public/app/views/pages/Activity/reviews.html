@@ -1,0 +1,13 @@
+<div ng-controller="mainCtrl">
+    <!--this html file represents the page where users can view the reviews regarding companies,and can write their own reviews. using the controller-->
+    <h1>Reviews :</h1>
+    <br>
+    <!--retrieving all the reviews from the database and showing them upon opening this page-->
+    <ol>
+        <li class="list-group-item" ng-repeat="Object in reviews">
+            {{"Client name: "+Object.client+" Title: "+Object.title+" Content: "+Object.content}}
+        </li>
+    </ol>
+    <br>
+
+</div>

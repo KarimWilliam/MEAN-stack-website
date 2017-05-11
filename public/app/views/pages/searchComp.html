@@ -1,0 +1,31 @@
+<div class "page-header"> </div>
+ <!--    submit form + button-->
+<form ng-submit <!--    submit form + button-->="searchingComp.searchCompAct(searchData);">
+  <label>company:</label>
+  <input class="form-control" type="text" name="activity"
+  placeholder="please enter a company name" ng-model="searchingComp.searchData.activity">
+  <br>
+  <button class= "btn btn-primary" type="submit"> Search </button>
+</form>
+<br>
+<div class="row show-hide-message" ng-controller="schCompCtrl">
+  <table class="table">
+ <!--    Table-->
+    <tr>
+    <th>Name</th>
+    <th>email</th>
+    <th>location</th>
+    </tr>
+  <tr ng-repeat = "company in companies">
+
+    <td>{{company.name}}</td>
+    <td>{{company.email}}</td>
+    <td>{{company.location}}</td>
+
+  </tr>
+  </table>
+
+<div ng-if = searchingComp.act>
+<div class = "alert alert-danger">  no such records exist!</div>
+</div>
+</div>

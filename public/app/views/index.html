@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href='/'>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Cascade Style Sheets -->
+    <link rel="stylesheet" type="text/css" href="../../assets/css/bootstrap.css">
+
+    <!-- Main Angular Files -->
+    <script src="../../assets/js/angular.js"></script>
+    <script src="../../assets/js/angular-route.js"></script>
+    <!-- Angular Config/Routes -->
+    <script src="../../app/app.js"></script>
+    <script src="../../app/routes.js"></script>
+    <!-- Controllers -->
+    <script src="../../app/controllers/myFavouritesctrl.js"></script>
+    <script src="../../app/controllers/subListctrl.js"></script>
+    <script src="../../app/controllers/homectrl.js"></script>
+    <script src="../../app/controllers/RegisterCtrl.js"></script>
+    <script src="../../app/controllers/RegisterCompCtrl.js"></script>
+    <script src="../../app/controllers/userCtrlEmad.js"></script>
+    <script src="../../app/controllers/userCtrlOmar.js"></script>
+    <script src="../../app/controllers/compctrl.js"></script>
+    <script src="../../app/controllers/mainCtrl.js"></script>
+    <script src="../../app//services/authServices.js"></script>
+    <script src="../../app//controllers/ActivitiesStuff/addActivityCtrl.js"></script>
+    <script src="../../app//controllers/ActivitiesStuff/Activities.js"></script>
+    <script src="../../app//controllers/ActivitiesStuff/DeletedActivities.js"></script>
+    <script src="../../app//controllers/ActivitiesStuff/editActivity.js"></script>
+    <script src="../../app//controllers/ActivitiesStuff/postReviewCtrl.js"></script>
+    <script src="../../app/controllers/userCtrlIbrahim.js"></script>
+    <script src="../../app/controllers/userCtrl.js"></script>
+    <script src="../../app/controllers/searchCtrl.js">
+    </script>
+    <script src="../../app/controllers/filterCtrl.js">
+    </script>
+    <script src="../../app/controllers/searchCompCtrl.js">
+    </script>
+    <script src="../../app/controllers/searchRateCtrl.js">
+    </script>
+
+
+    <title>Theme Template for Bootstrap</title>
+    z
+</head>
+
+<body ng-app="myApp" ng-controller="mainCtrl as main">
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Team</a></li>
+                    <li><a ng-show="!main.isLoggedIn" href="/login">Login</a></li>
+                    <li><a ng-show="!main.isLoggedIn" href="/register">Register</a></li>
+
+                    <li><a ng-show="main.isLoggedIn && main.isCompany" href="Activities/{{main.username}}">Activities</a></li>
+                    <li><a ng-show="main.isLoggedIn && main.isCompany" href="AddActivity">AddActivity</a></li>
+                    <li><a ng-show="main.isLoggedIn && main.isCompany" href="Trash">Deleted Activities</a></li>
+
+
+                    <li><a ng-show="false" ng-click="main.getReviews(main.username)" href="/reviews">Reviews</a></li>
+                    <li><a ng-show="main.isLoggedIn" ng-click="main.regUser()" href="/editProfile">Edit Profile</a></li>
+                    <li><a href="/about">Top Rated Activities</a></li>
+                    <li><a ng-show="main.isLoggedIn" href="/viewCompanies">Companies</a></li>
+                    <li><a ng-show="main.isLoggedIn && !main.isCompany" href="/myFavourites">My favourites</a></li>
+                    <li><a ng-show="main.isLoggedIn && !main.isCompany" href="/mySubscribers">My Subscriptions</a></li>
+                    <li><a ng-show="main.isLoggedIn && main.isSuperAdmin" href="/superban">Super Ban</a></li>
+                    <li><a ng-show="main.isLoggedIn && main.isSuperAdmin" href="/superdeban">Super Deban</a></li>
+                    <li><a ng-show="main.isLoggedIn && main.isSuperAdmin" href="/promote">Promote</a></li>
+                    <li><a ng-show="main.isLoggedIn && main.isSuperAdmin" href="/demote">Demote</a></li>
+                    <li><a ng-show="main.isLoggedIn && main.isAdmin" href="/adminban">Admin</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Search <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">Activities</li>
+                            <li><a href="/search">By Name</a></li>
+                            <li><a href="/searchRate">By Rating</a></li>
+                            <li ng-show="false" role="separator" class="divider"></li>
+                            <li ng-show="false" class="dropdown-header">Companies</li>
+                            <li><a ng-show="false" href="/filter">By location</a></li>
+                            <li><a ng-show="false" href="/searchComp">By Name</a></li>
+                        </ul>
+                    </li>
+                    <li><a ng-show="main.isLoggedIn" href="#" ng-click="main.logout()">Logout</a></li>
+
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="container theme-showcase" role="main">
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <style>
+                body {
+                    background-color: lightblue;
+                }
+            </style>
+            </head>
+            <h1>Welcome</h1>
+        </div>
+        <div ng-view></div>
+    </div>
+    <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../assets/js/jquery-3.1.1.min.js"></script>
+    <script src="../../assets/js/bootstrap.js"></script>
+</body>
+
+</html>

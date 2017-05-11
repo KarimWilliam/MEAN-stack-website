@@ -1,0 +1,34 @@
+<div class "page-header"> </div>
+<br>
+ <!--    submit form + button-->
+<form ng-submit="filtering.filterAct(filterData);">
+  <label>Location:</label>
+  <input class="form-control" type="text" name="location"
+   placeholder="please enter a company location" ng-model="filtering.filterData.location">
+  <br>
+  <button class= "btn btn-primary" type="submit"> Search </button>
+</form>
+
+<br>        <!--    <Table -->
+<div class="row show-hide-message"  ng-controller="ftrCtrl">
+  <table class="table">
+
+    <tr>
+    <th>Name</th>
+    <th>email</th>
+    <th>location</th>
+    </tr>
+  <tr ng-repeat = "company in companies">
+
+    <td>{{company.Name}}</td>
+    <td>{{company.email}}</td>
+    <td>{{company.location}}</td>
+
+  </tr>
+  </table>
+
+  <div ng-if = filtering.comp>
+  <div class = "alert alert-danger">  no such records exist!</div>
+  </div>
+
+</div>

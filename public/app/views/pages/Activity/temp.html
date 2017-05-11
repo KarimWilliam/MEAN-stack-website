@@ -1,0 +1,127 @@
+<div class="page-header">
+    <h1>Edit Activity</h1>
+</div>
+<br>
+
+<!-- Bootstrap Navigation Tabs -->
+<ul class="nav nav-tabs">
+    <li role="presentation" ng-click="namePhase();" ng-class="nameTab"><a href="#">Name</a></li>
+    <li role="presentation" ng-click="DescriptionPhase();" ng-class="DescriptionTab"><a href="#">Description</a></li>
+    <li role="presentation" ng-click="LocationPhase();" ng-class="LocationTab"><a href="#">Location</a></li>
+    <li role="presentation" ng-click="EndDatePhase();" ng-class="EndDateTab"><a href="#">Number of Applications</a></li>
+</ul>
+
+
+<br>
+<br>
+
+
+<form ng-show="phase1" ng-submit="updateName(regData)">
+
+    <label>PreviousName:</label>{{bb}}
+    <br>
+    <br>
+    <label>newName:</label>
+    <input class="form-control" type="text " name: "Name " ng-model="regData.Name ">
+    </div>
+
+    <button class="btn btn-primary " type="submit ">Edit</button>
+
+    <!-- button to go back to previous page !-->
+    <button class="btn btn-primary " type="button" ng-click="doTheBack()">Back</button>
+
+
+</form>
+
+<form ng-show="phase2 " ng-submit="updateDesc(regData.desc); ">
+
+    <label>Previous Description:</label>{{des}}
+    <br>
+    <br>
+
+    <label>Description:</label>
+    <input class="form-control " type="text " name: "desc " placeholder="please enter desc " ng-model="regData.desc ">
+    <br>
+
+    <button class="btn btn-primary " type="submit ">Edit</button>
+
+    <!-- button to go back to previous page !-->
+    <button class="btn btn-primary " type="button" ng-click="doTheBack()">Back</button>
+
+
+</form>
+
+<form ng-show="phase3 " ng-submit="updateNum(regData.numberOfApplicatons); ">
+
+    <label>Previous Number:</label>{{num}}
+    <br>
+    <br>
+
+    <label>Number of Applications:</label>
+    <input class="form-control " type="text " name: "numberOfApplicatons " placeholder="please enter new Number " ng-model="regData.numberOfApplicatons ">
+    <br>
+
+    <button class="btn btn-primary " type="submit ">Edit</button>
+
+    <!-- button to go back to previous page !-->
+    <button class="btn btn-primary " type="button" ng-click="doTheBack()">Back</button>
+
+
+</form>
+
+<form ng-show="phase4 " ng-submit="updateLoc(regData.location); ">
+
+    <label>Previous Location:</label>{{loc}}
+    <br>
+    <br>
+
+    <label>Location:</label>
+    <input class="form-control " type="text " name: "location " placeholder="please enter Location " ng-model="regData.location">
+    <br>
+
+    <button class="btn btn-primary " type="submit ">Edit</button>
+
+    <!-- button to go back to previous page !-->
+    <button class="btn btn-primary " type="button" ng-click="doTheBack()">Back</button>
+
+
+</form>
+
+
+<div class="row show-hide-message " ng-show="successMsg1 ">
+    <div class="alert alert-success ">{{successMsg1}}</div>
+</div>
+
+<div class="row show-hide-message " ng-show="successMsg2 ">
+    <div class="alert alert-success ">{{successMsg2}}</div>
+</div>
+
+<div class="row show-hide-message " ng-show="successMsg3 ">
+    <div class="alert alert-success ">{{successMsg3}}</div>
+</div>
+
+<div class="row show-hide-message " ng-show="successMsg4 ">
+    <div class="alert alert-success ">{{successMsg4}}</div>
+</div>
+
+
+<br>
+
+
+<div class="row show-hide-message " ng-show="errorMsg1 ">
+    <div class="alert alert-danger ">{{errorMsg1}}</div>
+</div>
+
+<div class="row show-hide-message " ng-show="errorMsg2 ">
+    <div class="alert alert-danger ">{{errorMsg2}}</div>
+</div>
+
+
+<div class="row show-hide-message " ng-show="errorMsg3 ">
+    <div class="alert alert-danger ">{{errorMsg3}}</div>
+</div>
+
+
+<div class="row show-hide-message " ng-show="errorMsg4 ">
+    <div class="alert alert-danger ">{{errorMsg4}}</div>
+</div>

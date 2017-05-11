@@ -1,0 +1,20 @@
+<div class="page-header" >
+<h1>Edit Profile<h1>
+
+</div>
+<form ng-submit="user.regUser(regData);">
+<!--name-->
+<label>Name</label>
+<input class="form-control"type ="text" name="name" placeholder="name" ng-model="user.regData.name"><br>
+<!--password-->
+<label>Password</label>
+<input class="form-control"type ="password" name="password" placeholder="password"ng-model="user.regData.password"><br>
+<!--email-->
+<label>Email</label>
+<input class="form-control"type ="email" name="email" placeholder="email" ng-model="user.regData.email"><br>
+<!--creditCard-->
+<label>Credit Card</label>
+<input class="form-control" type ="text" name="creditCardNumber" placeholder="CreditCard" ng-model="user.regData.creditCardNumber"><br>
+<button class="btn btn-primary"type="submit">Save</button>
+
+</form>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+</head>
+<div class="page-header">
+   <h3>Your Favourite list :</h3>
+   <table class="table">
+        <tr>
+            <th>Company name</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Price</th>
+        </tr>
+
+        <tr ng-repeat="fav in favlist">
+            <td>{{fav.companyName}}</td>
+            <td>{{fav.name}}</td>
+             <td>{{fav.date}}</td>
+            <td>{{fav.location}}</td>
+            <td>{{fav.price}}</td>
+        </tr>
+        <!-- End: Table -->
+    </table>
+
+    <br>
+    <div class="row show-hide-message" ng-show="successMsg">
+        <div class="alert alert-success">{{successMsg}}</div>
+    </div>
+
+    <br>
+    <div class="row show-hide-message" ng-show="errorMsg">
+        <div class="alert alert-danger">{{errorMsg}}</div>
+    </div>
+</div>
+</div>
+</html>

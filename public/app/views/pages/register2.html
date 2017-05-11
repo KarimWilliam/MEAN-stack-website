@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+    <h1>Company registeration</h1>
+
+    <form ng-submit="register2.regComp(compData);">
+        <label>Name:</label>
+        <input class="form-control" type="text" name="name" placeholder="please enter name" ng-model="register2.compData.name">
+        <br>
+        <label>Email:</label>
+        <input class="form-control" type="email" name="email" placeholder="please enter email" ng-model="register2.compData.email">
+        <br>
+        <br>
+        <label>Email's Password:</label>
+        <input class="form-control" type="password" name="passOfEmail" placeholder="please enter password of mail" ng-model="register2.compData.passOfEmail">
+        <br>
+
+        <label>Username:</label>
+        <input class="form-control" type="text" name="username" placeholder="please enter username" ng-model="register2.compData.username">
+        <br>
+        <label>Password:</label>
+        <input class="form-control" type="password" name="password" placeholder="please enter password" ng-model="register2.compData.password">
+        <br>
+        <label>Locations:</label>
+        <input class="form-control" type="text" name="location" placeholder="please enter location" ng-model="register2.compData.location">
+        <br>
+
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+
+    <br>
+    <div class="row show-hide-message" ng-show="register2.successMsg">
+        <div class="alert alert-success">{{register2.successMsg}}</div>
+    </div>
+
+    <br>
+    <div class="row show-hide-message" ng-show="register2.errorMsg">
+        <div class="alert alert-danger">{{register2.errorMsg}}</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+        
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<div class="page-header">
+    <h3>Companies :</h3>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Email</th>
+        </tr>
+
+        <tr ng-repeat="comp in complist">
+            <td>{{comp.name}}</td>
+            <td>{{comp.location}}</td>
+            <td>{{comp.email}}</td>
+            <td><a href="/Activities/{{comp.name}}"><button type="button " class="btn btn-primary">Show activities</button></a></td>
+            <td><a href="/addToSubList/{{comp.name}}"><button type="button " class="btn btn-primary">Subscribe</button></a></td>
+            <td><a href="/postReview/{{comp.name}}"><button type="button " class="btn btn-warning" ng-show="main.isLoggedIn">post a review</button</a></td>
+        </tr>
+        <!-- End: Table -->
+    </table>
+</div>
+</div>
+
+</html>

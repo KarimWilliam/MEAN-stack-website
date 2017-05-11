@@ -1,0 +1,29 @@
+<div class "page-header"> </div>
+ <!--   button-->
+<form ng-submit="searchingRate.searchRateAct(searchData);">
+
+  <button class= "btn btn-primary" type="submit"> Sort by Rating! </button>
+</form>
+
+<br>
+<div class="row show-hide-message" ng-controller="schRateCtrl">
+  <table class="table">
+ <!--  Table-->
+      <tr>
+      <th>Name</th>
+      <th>Company Name</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>average Rating</th>
+      </tr>
+    <tr ng-repeat = "activity in activities">
+
+      <td>{{activity.Name}}</td>
+      <td>{{activity.companyName}}</td>
+      <td>{{activity.StartDate}}</td>
+      <td>{{activity.EndDate}}</td>
+      <td>{{activity.avgRating}}</td>
+    </tr>
+    </table>
+
+</div>

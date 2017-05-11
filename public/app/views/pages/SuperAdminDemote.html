@@ -1,0 +1,41 @@
+<div class="page-header">
+    <h1>Demote</h1>
+</div>
+
+<!-- Demote -->
+<form ng-submit="demote.demoteUser(demoteData);">
+    
+    <!-- Username -->
+    <label>Username:</label>
+    <input class="form-control" type="text" name="username" placeholder="please enter username" ng-model="demote.demoteData.username">
+    <br>
+    <!-- Submit/Demote Button -->
+    <button class="btn btn-primary" type="submit">Demote</button>
+</form>
+<br>
+
+<!-- Registration Form -->
+
+<br>
+
+<!-- Loading Icon -->
+<div class="jumbotron text-center" ng-show="register.loading">
+    <span class="glyphicon glyphicon-repeat spinner"></span>
+    <p>Loading....</p>
+</div>
+<!-- Loading Icon -->
+
+<br>
+
+<!-- Successful Ban Message -->
+<div class="row show-hide-message" ng-show="demote.successMsg">
+    <div class="alert alert-success">{{ demote.successMsg }}</div>
+</div>
+<!-- Failure Ban Message -->
+
+<br>
+
+<div class="row show-hide-message" ng-show="demote.errorMsg">
+    <div class="alert alert-danger">{{ demote.errorMsg }}</div>
+</div>
+<!-- Failed Registration Message -->

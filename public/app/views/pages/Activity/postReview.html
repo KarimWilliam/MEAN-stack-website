@@ -1,0 +1,40 @@
+    <!--this html file represents the page where users can view the reviews regarding companies,and can write their own reviews. using the controller-->
+    <h1>Reviews :</h1>
+    <br>
+    <!--retrieving all the reviews from the database and showing them upon opening this page-->
+    <ol>
+        <li class="list-group-item" ng-repeat="contact in contactlist">
+            {{"Client name: "+contact.client+" Title: "+contact.title+" Content: "+contact.content}}
+            <button ng-click="ban.deletereview({{contact._id}})"class="btn btn-primary" type="submit">Delete</button>
+        </li>
+    </ol>
+    <br>
+
+<div>
+    <h1>Add your Review</h1>
+</div>
+<!--taking the input from the user and sending it to the controller where it calls the backend methods to post a new review using this input values-->
+<form ng-submit="revUser(Data);">
+
+
+    <input class="form-control" type="text" name="title" placeholder="please write a title" ng-model="Data.title">
+    <input class="form-control" type="text" name="content" placeholder="please write a review" ng-model="Data.content">
+    <br>
+
+    <button class="btn btn-primary" type="submit">Post</button>
+</form>
+
+<br>
+
+<!--ng show is used to make the success/error message box invisible until needed.-->
+<br>
+
+<div class="row show-hide-message" ng-show="successMsg">
+    <div class="alert alert-success">{{ successMsg }}</div>
+</div>
+
+<br>
+
+<div class="row show-hide-message" ng-show="errorMsg">
+    <div class="alert alert-danger">{{ errorMsg }}</div>
+</div>

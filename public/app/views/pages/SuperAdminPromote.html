@@ -1,0 +1,36 @@
+<div class="page-header">
+    <h1>Promote</h1>
+</div>
+
+<!-- Promote -->
+<form ng-submit="promote.promoteUser(promoteData);">
+    
+    <!-- Username -->
+    <label>Username:</label>
+    <input class="form-control" type="text" name="username" placeholder="please enter username" ng-model="promote.promoteData.username">
+    <br>
+    <!-- Submit/Promote Button -->
+    <button class="btn btn-primary" type="submit">Promote</button>
+</form>
+<br>
+
+<!-- Registration Form -->
+
+<br>
+
+
+
+<br>
+
+<!-- Successful Ban Message -->
+<div class="row show-hide-message" ng-show="promote.successMsg">
+    <div class="alert alert-success">{{ promote.successMsg }}</div>
+</div>
+<!-- Failure Ban Message -->
+
+<br>
+
+<div class="row show-hide-message" ng-show="promote.errorMsg">
+    <div class="alert alert-danger">{{ promote.errorMsg }}</div>
+</div>
+<!-- Failed Registration Message -->

@@ -1,0 +1,36 @@
+<div class="page-header">
+    <h1>Admin Ban</h1>
+</div>
+
+<!-- Banning -->
+<form ng-submit="ban.banUser(banData);">
+    
+    <!-- Username -->
+    <label>Username:</label>
+    <input class="form-control" type="text" name="username" placeholder="please enter username" ng-model="ban.banData.username">
+    <br>
+    <!-- Submit/Ban Button -->
+    <button class="btn btn-primary" type="submit">Ban</button>
+</form>
+<br>
+<!-- UnBanning -->
+<form ng-submit="ban.UnbanUser(banData);">
+    
+    <button class="btn btn-primary" type="submit">UnBan</button>
+</form>
+
+
+<br>
+
+<!-- Successful Ban Message -->
+<div class="row show-hide-message" ng-show="ban.successMsg">
+    <div class="alert alert-success">{{ ban.successMsg }}</div>
+</div>
+<!-- Failure Ban Message -->
+
+<br>
+
+<div class="row show-hide-message" ng-show="ban.errorMsg">
+    <div class="alert alert-danger">{{ ban.errorMsg }}</div>
+</div>
+<!-- Failed Registration Message -->

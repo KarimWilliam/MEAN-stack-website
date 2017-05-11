@@ -1,0 +1,34 @@
+<div class "page-header"> </div>
+ <!--    submit form + button-->
+<form ng-submit="searching.searchAct(searchData);">
+  <label>Activity:</label>
+  <input class="form-control" type="text" name="activity"
+  placeholder="please enter an activity name" ng-model="searching.searchData.activity">
+  <br>
+  <button class= "btn btn-primary" type="submit"> Search </button>
+</form>
+<br>
+<div class="row show-hide-message" ng-controller="schCtrl">
+<table class="table">
+ <!--    table-->
+  <tr>
+  <th>Name</th>
+  <th>Company Name</th>
+  <th>Start Date</th>
+  <th>End Date</th>
+  <th>average Rating</th>
+  </tr>
+<tr ng-repeat = "activity in activities">
+
+  <td>{{activity.Name}}</td>
+  <td>{{activity.companyName}}</td>
+  <td>{{activity.StartDate}}</td>
+  <td>{{activity.EndDate}}</td>
+  <td>{{activity.avgRating}}</td>
+</tr>
+</table>
+
+<div ng-if = searching.act>
+<div class = "alert alert-danger">  no such records exist!</div>
+</div>
+</div>

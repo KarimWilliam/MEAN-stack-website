@@ -1,0 +1,95 @@
+<!-- Style -->
+<style>
+    .selected {
+        background-color: lightcoral;
+        color: white;
+        font-weight: bold;
+    }
+</style>
+
+<!--Header!-->
+<div class="page-header">
+    <h1>DeletedActivities</h1>
+</div>
+
+
+<br>
+
+
+<br>
+
+<!-- Activity Management Table -->
+<div class="panel panel-primary">
+    <!-- Heading -->
+    <div class="panel-heading">
+        <strong>Activity Management</strong>
+    </div>
+
+</div>
+<!-- Start: Table -->
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>desc</th>
+        <th>numberOfApplications</th>
+    </tr>
+    <tr ng-repeat="contact in contactlist | limitTo : limit" ng-class="{'selected':$index == selectedRow}" ng-click="setClickedRow(contact._id,$index)">
+        <td>{{contact.Name}}</td>
+        <td>{{contact.desc}}</td>
+        <td>{{contact.numberOfApplicatons}}</td>
+        <td>
+            <button type="button " class="btn btn-success" ng-click="deleteActivity(contact._id,$index)">Activate</button>
+        </td>
+    </tr>
+    <!-- End: Table -->
+</table>
+</div>
+<!-- Selection of Activity -->
+<div class="panel panel-default" ng-show="show">
+    <div class="panel-heading">Details</div>
+    <div class="panel-body"></div>
+    <dl>
+        <dt>Name</dt>
+        <dd>{{selectedActivity[0].Name}}</dd>
+
+        <br>
+
+        <dt>StartDate</dt>
+        <dd>{{selectedActivity[0].StartDate}}</dd>
+
+        <br>
+
+        <dt>EndDate</dt>
+        <dd>{{selectedActivity[0].EndDate}}</dd>
+        <br>
+
+        <dt>numberOfApplications</dt>
+        <dd>{{selectedActivity[0].numberOfApplicatons}}</dd>
+        <br>
+
+        <dt>location</dt>
+        <dd>{{selectedActivity[0].location}}</dd>
+        <br>
+
+        <dt>Description</dt>
+        <dd>{{selectedActivity[0].desc}}</dd>
+
+        <br>
+
+        <dt>avgRating</dt>
+        <dd>{{selectedActivity[0].avgRating}}</dd>
+
+        <br>
+
+        <dt>numberOfRatings</dt>
+        <dd>{{selectedActivity[0].numberOfRatings}}</dd>
+
+        <br>
+
+        <dt>ratings</dt>
+        <dd>{{selectedActivity[0].ratings}}</dd>
+
+
+
+    </dl>
+</div>
